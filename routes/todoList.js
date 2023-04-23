@@ -33,7 +33,7 @@ const upload = multer({
     },
 }).single('image');
 
-router.get('/',authentication,  todoListContollers.getTodoList);
+router.get('/',  todoListContollers.getTodoList);
 router.post('/', authentication, upload, todoListContollers.addTodoList);
 router.put('/', authentication, upload, todoListContollers.updateTodoList);
 router.delete('/:id', authentication, todoListContollers.deleteTodoList);
