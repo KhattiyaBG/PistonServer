@@ -1,7 +1,14 @@
 const db = require('../models');
+const { Op } = require('sequelize');
 
 const getItems = async (req, res) => {
-    const items = await db.Items.findAll();
+    const inventory = await db.Inventory.findAll({where: { user_id: req.user.id}});
+    let ids = [];
+    inventory?.map( (items, index) => {
+        ids.push(items.id)
+    });
+
+    const items = await db.Items.findAll( { where: { inventory_id : { [Op.in]: ids, }} });
     res.status(200).send({items});
 };
 
