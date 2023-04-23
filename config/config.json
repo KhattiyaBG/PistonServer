@@ -2,8 +2,8 @@
   "development": {
     "username": "admin",
     "password": "piston2023",
-    "database": "PistonGear",
-    "host": "pistongear.cnvswt6h1unr.ap-southeast-2.rds.amazonaws.com",
+    "database": "PistonGear01",
+    "host": "pistongear2023.cnvswt6h1unr.ap-southeast-2.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
