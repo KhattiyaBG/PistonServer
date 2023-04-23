@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const todoListRoutes = require('./routes/todoList');
+const test = require('./routes/test');
 const inventoryRoutes = require('./routes/inventory');
 const itemRoutes = require('./routes/item');
 const userRoutes = require('./routes/user');
@@ -20,7 +21,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/test', todoListRoutes);  
+app.use('/', test); 
+app.use('/test', test);  
 app.use('/inventory', inventoryRoutes);
 app.use('/item', itemRoutes);
 app.use('/users', userRoutes);
