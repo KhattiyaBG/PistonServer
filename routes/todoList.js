@@ -3,9 +3,9 @@ const multer = require('multer');
 
 const router = express.Router();
 const todoListContollers = require('../controllers/todoList');
-const passport = require('passport');
+// const passport = require('passport');
 
-const authentication = passport.authenticate("่jwt", {session : false});
+// const authentication = passport.authenticate("่jwt", {session : false});
 
 const path = require('path');
 
@@ -34,8 +34,8 @@ const upload = multer({
 }).single('image');
 
 router.get('/',  todoListContollers.getTodoList);
-router.post('/', authentication, upload, todoListContollers.addTodoList);
-router.put('/', authentication, upload, todoListContollers.updateTodoList);
-router.delete('/:id', authentication, todoListContollers.deleteTodoList);
+// router.post('/',  upload, todoListContollers.addTodoList);
+// router.put('/',  upload, todoListContollers.updateTodoList);
+// router.delete('/:id' , todoListContollers.deleteTodoList);
 
 module.exports = router;
