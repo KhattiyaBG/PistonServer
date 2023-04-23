@@ -1,8 +1,8 @@
 const db = require('../models');
 
 const getTodoList = async (req, res) => {
-    const todoList = await db.TodoList.findAll({where: {user_id: req.user.id}});
-    res.status(200).send(todoList);
+    // const todoList = await db.TodoList.findAll({where: {user_id: req.user.id}});
+    res.status(200).send("Test Successfully");
 };
 
 const addTodoList = async (req, res) => {
