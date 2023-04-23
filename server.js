@@ -8,7 +8,7 @@ const inventoryRoutes = require('./routes/inventory');
 const itemRoutes = require('./routes/item');
 const userRoutes = require('./routes/user');
 const db = require('./models');
-const PORT = Number(3000);
+const PORT = process.env.PORT;
 
 
 
